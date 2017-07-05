@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -61,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="37.331334332833585"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Task View Controller-->
         <scene sceneID="j3r-kg-63l">
             <objects>
-                <viewController id="6Cg-31-4bX" sceneMemberID="viewController">
+                <viewController id="6Cg-31-4bX" customClass="CreateTaskViewController" customModule="DoIT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gag-Id-igD"/>
                         <viewControllerLayoutGuide type="bottom" id="G6q-0D-3mf"/>
@@ -72,8 +73,68 @@
                     <view key="view" contentMode="scaleToFill" id="XKx-D7-Ce7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Kd-2i-w3K">
+                                <rect key="frame" x="160.5" y="114" width="54.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdu-hf-q5A">
+                                        <rect key="frame" x="0.0" y="0.0" width="54.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yea-33-tl1">
+                                <rect key="frame" x="66" y="144.5" width="243" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nE3-AN-crd">
+                                <rect key="frame" x="150" y="214.5" width="75" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYa-lz-vsB">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qg3-Jy-9Bb">
+                                <rect key="frame" x="163" y="245" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ms2-lm-LRL">
+                                <rect key="frame" x="172.5" y="318" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="6Cg-31-4bX" eventType="touchUpInside" id="KUI-6C-G2w"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yea-33-tl1" firstAttribute="centerX" secondItem="XKx-D7-Ce7" secondAttribute="centerX" id="5G9-RU-X8E"/>
+                            <constraint firstItem="yea-33-tl1" firstAttribute="top" secondItem="Wdu-hf-q5A" secondAttribute="bottom" constant="10" id="ECY-18-awy"/>
+                            <constraint firstItem="Ms2-lm-LRL" firstAttribute="top" secondItem="qg3-Jy-9Bb" secondAttribute="bottom" constant="42" id="JvE-k5-87M"/>
+                            <constraint firstItem="DYa-lz-vsB" firstAttribute="top" secondItem="yea-33-tl1" secondAttribute="bottom" constant="40" id="L4X-N6-ywn"/>
+                            <constraint firstItem="yea-33-tl1" firstAttribute="leading" secondItem="XKx-D7-Ce7" secondAttribute="leadingMargin" constant="50" id="QiS-uW-EhW"/>
+                            <constraint firstItem="Ms2-lm-LRL" firstAttribute="centerX" secondItem="XKx-D7-Ce7" secondAttribute="centerX" id="b36-w6-l4w"/>
+                            <constraint firstItem="qg3-Jy-9Bb" firstAttribute="centerX" secondItem="XKx-D7-Ce7" secondAttribute="centerX" id="hYu-FT-G55"/>
+                            <constraint firstItem="qg3-Jy-9Bb" firstAttribute="top" secondItem="DYa-lz-vsB" secondAttribute="bottom" constant="10" id="hee-5O-KkO"/>
+                            <constraint firstItem="0Kd-2i-w3K" firstAttribute="top" secondItem="gag-Id-igD" secondAttribute="bottom" constant="50" id="iLB-ty-vQh"/>
+                            <constraint firstItem="0Kd-2i-w3K" firstAttribute="centerX" secondItem="XKx-D7-Ce7" secondAttribute="centerX" id="miQ-hP-BUE"/>
+                            <constraint firstItem="nE3-AN-crd" firstAttribute="centerX" secondItem="XKx-D7-Ce7" secondAttribute="centerX" id="nxU-j8-b1S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yea-33-tl1" secondAttribute="trailing" constant="50" id="ooy-h4-Dc7"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="importantSwitch" destination="qg3-Jy-9Bb" id="MMq-5R-LBm"/>
+                        <outlet property="taskNameText" destination="yea-33-tl1" id="zVr-CR-RgE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iUy-eQ-pcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
